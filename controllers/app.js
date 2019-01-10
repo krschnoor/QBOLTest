@@ -6,13 +6,13 @@ var refreshToken = require('./refreshToken');
 var port = process.env.PORT || 3000;
 var request = require('request');
 
-QuickBooks.setOauthVersion('2.0');
+QuickBooks.setOauthVersion('2.0', false);
 
 
 // INSERT YOUR CONSUMER_KEY AND CONSUMER_SECRET HERE
 
-var consumerKey = 'Q0JSDCkcz8oVCPbGj9I2lyiDoZpsMGRlYar7ku4idQISSGdKec';
-var consumerSecret = 'ZFlU7Y6yn47vhwmBnZOuHPT5Pp2xRXWp9bytnzPN';
+var consumerKey = 'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
+var consumerSecret = 'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
 
 //app.get('/', function (req, res) {
 //  res.redirect('/start');
@@ -31,7 +31,7 @@ function generateAntiForgery (session) {
 exports.getToken = function (req, res) {
   var redirecturl = QuickBooks.AUTHORIZATION_URL +
     '?client_id=' + consumerKey +
-    '&redirect_uri=' + encodeURIComponent('http://localhost:' + port + '/callback/') +  //Make sure this path matches entry in application dashboard
+    '&redirect_uri=' + encodeURIComponent('https://qboltest.herokuapp.com/callback/') +  //Make sure this path matches entry in application dashboard
     '&scope=com.intuit.quickbooks.accounting' +
     '&response_type=code' +
     '&state=' + generateAntiForgery(req.session);
@@ -52,7 +52,7 @@ exports.getTokenSecret =  function (req, res) {
     form: {
       grant_type: 'authorization_code',
       code: req.query.code,
-      redirect_uri: 'http://localhost:' + port + '/callback/'  //Make sure this path matches entry in application dashboard
+      redirect_uri: 'https://qboltest.herokuapp.com/callback/'  //Make sure this path matches entry in application dashboard
     }
   };
 
