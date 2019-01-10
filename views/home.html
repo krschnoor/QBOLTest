@@ -84,7 +84,7 @@ div.tab button.active {
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div  class="navbar-header">
-      <a class="navbar-brand" href="#">Common$ents <small ng-model="client.name">{{client.name}}</small></a>
+      <a class="navbar-brand" href="#">Common$ents</a>
     </div>
     <ul class="nav navbar-nav">
       <li ng-click="getQB()" class="active"><a   href="#">Connect to QuickBooks</a></li>
@@ -117,7 +117,7 @@ div.tab button.active {
 </nav>
 
 <div  class="tab">
-  <span  ng-model="selectedClient">{{selectedClient.name}}</span>
+  <span  ng-model="selectedClient"></span>
   <button style="font-size:larger; word-spacing:-10px;font-weight:bold " class="glyphicon glyphicon-log-in" ng-click="getQB()" class="tablinks">&nbsp;QuickBooks Connection</button>
   <button style="font-size:larger; word-spacing:-10px;font-weight:bold " class="glyphicon glyphicon-user" ng-click="setContent('selectCSClient.html')" class="tablinks" >&nbsp;Common$sents Clients</button>
   <button class="tablinks" >Tokyo</button>
