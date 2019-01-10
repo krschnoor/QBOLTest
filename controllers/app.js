@@ -114,7 +114,7 @@ console.log(token)
                              refreshResponse.access_token, /* oAuth access token */
                              false, /* no token secret for oAuth 2.0 */
                              token.realmid,
-                             true, /* use a sandbox account */
+                             false, /* use a sandbox account */
                              true, /* turn debugging on */
                              4, /* minor version */
                              '2.0', /* oauth version */
