@@ -47,13 +47,6 @@
   "directories": {
     "example": "example",
     "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mcohen01/node-quickbooks.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mcohen01/node-quickbooks/issues"
-  },
-  "homepage": "https://github.com/mcohen01/node-quickbooks"
+  }
+  
 }
