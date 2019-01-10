@@ -93,7 +93,7 @@ console.log(token)
         },
         form: {
             grant_type: 'refresh_token',
-            refresh_token: token //qbo.refreshToken 
+            refresh_token: token.refreshtoken //qbo.refreshToken 
         }
     };
     
@@ -113,7 +113,7 @@ console.log(token)
                              consumerSecret,
                              refreshResponse.access_token, /* oAuth access token */
                              false, /* no token secret for oAuth 2.0 */
-                             '123145857171484',
+                             token.realmid,
                              true, /* use a sandbox account */
                              true, /* turn debugging on */
                              4, /* minor version */

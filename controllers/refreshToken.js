@@ -57,7 +57,11 @@ exports.getRefreshToken = function (callback) {
       console.log(result);
       db.close();
       rt = result[0].refreshtoken
-      callback(rt)
+      rid = result[0].realm
+      obj = {}
+      obj.refreshtoken = rt
+      obj.realmid = rid
+      callback(obj)
     });
   });
 
