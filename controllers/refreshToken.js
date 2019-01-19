@@ -66,7 +66,7 @@ exports.getRefreshToken = function (callback) {
       if (err) throw err;
       console.log(result);
       db.close();
-      rt = result[0].refreshtoken
+      rt = result[0] //.refreshtoken
        //decrypt(rt).then(function(rt){
         // console.log("decrypted token" + rt)
          callback(rt)
