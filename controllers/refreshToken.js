@@ -1,5 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol";
+var crypto = require('crypto')
 
 exports.storeRefreshToken = function (token, realmid) {
 
@@ -24,6 +25,10 @@ exports.storeRefreshToken = function (token, realmid) {
 
 
 function storeNew(token, realmid) {
+
+token = encrypt(token)
+
+console.log("encrypted token " + token)
 
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
@@ -52,18 +57,41 @@ exports.getRefreshToken = function (callback) {
     if (err) throw err;
     var dbo = db.db("qbol");
     var query = { no: 1 };
-    dbo.collection("companies").find(query).toArray(function (err, result) {
+    dbo.collection("companies").find(query).toArray( function (err, result) {
       if (err) throw err;
       console.log(result);
       db.close();
       rt = result[0].refreshtoken
-      rid = result[0].realm
-      obj = {}
-      obj.refreshtoken = rt
-      obj.realmid = rid
-      callback(obj)
+       decrypt(rt).then(function(rt){
+         console.log("decrypted token" + rt)
+         callback(rt)
+       })
+    
     });
   });
 
 
+}
+
+function encrypt(text){
+  var cipher = crypto.createCipher(algorithm,password)
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
+}
+
+var decrypt = function(text){
+  
+  return new Promise(function(resolve, reject) {
+    var decipher = crypto.createDecipher(algorithm,password)
+    var dec = decipher.update(text,'hex','utf8')
+    dec += decipher.final('utf8');
+  
+    if ( dec ) {
+      resolve(dec);
+    } else {
+      reject(Error("It broke"));
+    }
+  });
+  
 }
