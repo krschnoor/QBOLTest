@@ -1,19 +1,19 @@
-<div class="container container-fluid col-sm-10" ng-controller="QBOLcontroller">
+<div class="container container-fluid col-sm-10" >
     <div class="panel-group">
         <div class="panel panel-primary">
             <div class="panel-heading">Test Keys</div>
             <div class="panel-body">
-                <table>
+                <table ng-init="realmid=''">
                     <tr>
                         <td width="200">
-                            <div class="form-group">
+                            <div  class="form-group">
                                 <label for="realmid">Realm ID</label>
                                 <input ng-model="realmid" type="text" class="form-control" id="realmid">
                             </div>
                         </td>
                         <td width="200"></td>
                         <td width="150">
-                            <button ng-click="getAccounts();" class="btn btn-primary btn-md">Submit</button>
+                            <button ng-click="getAccounts(realmid);" class="btn btn-primary btn-md">Submit</button>
                         </td>
                     </tr>
                 </table>
