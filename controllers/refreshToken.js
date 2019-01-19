@@ -8,7 +8,8 @@ var password = 'd6F3Efeq';
 
 exports.storeRefreshToken = function (token, realmid) {
 
-
+ console.log("here is the abolute refresh token " + token)
+ console.log("here is the abolute relmid  " + realmid)
 
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
