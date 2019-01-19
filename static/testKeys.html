@@ -1,4 +1,4 @@
-<div class="container container-fluid col-sm-10" >
+<div class="container container-fluid col-sm-10">
     <div class="panel-group">
         <div class="panel panel-primary">
             <div class="panel-heading">Test Keys</div>
@@ -6,12 +6,12 @@
                 <table ng-init="realmid=''">
                     <tr>
                         <td width="200">
-                            <div  class="form-group">
-                                <label for="realmid">Realm ID</label>
-                                <input ng-model="realmid" type="text" class="form-control" id="realmid">
-                            </div>
+                            <label for="realmid">Realm ID</label>
                         </td>
-                        <td width="200"></td>
+                        <td>
+                            <input ng-model="realmid" type="text" class="form-control" id="realmid">
+                        </td>
+                        <td width="70"></td>
                         <td width="150">
                             <button ng-click="getAccounts(realmid);" class="btn btn-primary btn-md">Submit</button>
                         </td>
