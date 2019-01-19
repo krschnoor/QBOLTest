@@ -6,9 +6,9 @@
                 <form class="form-inline">
                     <div class="form-group">
                         <label for="realmid">Realm ID</label>
-                        <input type="input" class="form-control" id="realmid">
+                        <input ng-model="realmid" type="input" class="form-control" id="realmid">
                     </div>
-                  <button type="button" class="btn btn-primary btn-md">Submit</button>
+                  <button ng-click="getAccounts()" type="button" class="btn btn-primary btn-md">Submit</button>
                 </form>
 
             </div>

@@ -3,7 +3,7 @@ var app = angular.module('QBOL', [])
 app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$window', '$rootScope', function ($scope, $http, $location, $timeout, $window, $rootScope) {
 
   $scope.QBAccounts = null
-
+  $scope.realmid = null
 
   $scope.getQB = function () {
 
@@ -19,7 +19,9 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
 
   $scope.getAccounts = function () {
 
-    $http.get('/accounts').success(function (data, status, headers, config) {
+    alert($scope.realmid)
+    
+    $http.get('/accounts',{params:{realmid:$scope.realmid}}).success(function (data, status, headers, config) {
       $scope.QBAccounts = data
       $scope.setContent('hello.html')
     }).error(function (data, status, headers, config) { })
