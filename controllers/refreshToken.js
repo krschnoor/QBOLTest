@@ -75,7 +75,7 @@ exports.getRefreshToken = function (callback) {
       //.refreshtoken
        //decrypt(rt).then(function(rt){
         // console.log("decrypted token" + rt)
-         callback(rt)
+         callback(obj)
        //})
     
     });
