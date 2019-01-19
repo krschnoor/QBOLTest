@@ -92,7 +92,7 @@ div.tab button.active {
         <ul class="dropdown-menu">
           <li ng-click="getAccounts()"><a  href="#">Find Accounts</a></li>
           <li ng-click="getJson()" ><a href="#">Post JSON</a></li>
-          <li ng-click="setContent('dashboard.html')"><a href="#">Dash Board</a></li>
+          <li ng-click="setContent('testKeys.html')"><a href="#">Test Keys</a></li>
           
         </ul>
       </li>
@@ -138,7 +138,9 @@ div.tab button.active {
   </div>
 
  
- 
+  <div  ng-if="content=='/static/testKeys.html'">
+  <p  ng-include src="'/static/testKeys.html'" ></p>
+  </div>
 
 </div>
 
