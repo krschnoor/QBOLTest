@@ -2,6 +2,10 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol";
 var crypto = require('crypto')
 
+var algorithm = 'aes-256-ctr'
+var password = 'd6F3Efeq';
+
+
 exports.storeRefreshToken = function (token, realmid) {
 
 
