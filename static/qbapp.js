@@ -3,7 +3,7 @@ var app = angular.module('QBOL', [])
 app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$window', '$rootScope', function ($scope, $http, $location, $timeout, $window, $rootScope) {
 
   $scope.QBAccounts = null
-  $scope.realmid = null
+  $scope.realmid 
 
   $scope.getQB = function () {
 
