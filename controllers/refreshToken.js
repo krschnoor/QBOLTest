@@ -30,7 +30,7 @@ exports.storeRefreshToken = function (token, realmid) {
 
 function storeNew(token, realmid) {
 
-token = encrypt(token)
+//token = encrypt(token)
 
 console.log("encrypted token " + token)
 
@@ -66,10 +66,10 @@ exports.getRefreshToken = function (callback) {
       console.log(result);
       db.close();
       rt = result[0].refreshtoken
-       decrypt(rt).then(function(rt){
-         console.log("decrypted token" + rt)
+       //decrypt(rt).then(function(rt){
+        // console.log("decrypted token" + rt)
          callback(rt)
-       })
+       //})
     
     });
   });
