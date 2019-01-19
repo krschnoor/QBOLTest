@@ -18,9 +18,9 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
 
   }
 
-  $scope.getAccounts = function () {
+  $scope.getAccounts = function (realmid) {
 
-  alert($scope.realmid)
+  alert(realmid)
     
     $http.get('/accounts',{params:{realmid:$scope.realmid}}).success(function (data, status, headers, config) {
      
