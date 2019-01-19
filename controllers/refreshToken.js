@@ -66,7 +66,13 @@ exports.getRefreshToken = function (callback) {
       if (err) throw err;
       console.log(result);
       db.close();
-      rt = result[0] //.refreshtoken
+      rt = result[0] 
+      
+      var obj = {}
+      obj.refreshtoken = result[0].refreshtoken
+      obj.realmid = result[0].realm
+
+      //.refreshtoken
        //decrypt(rt).then(function(rt){
         // console.log("decrypted token" + rt)
          callback(rt)
