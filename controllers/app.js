@@ -78,9 +78,9 @@ exports.getTokenSecret =  function (req, res) {
 exports.getAccounts = function (req, res) {
 
 var auth = (new Buffer(consumerKey + ':' + consumerSecret).toString('base64'));
-
+var realmid = req.query.realmid
 //need to add client realmid and pass to function to get correct refresh token. realm id should be passed in as a query parameter
-refreshToken.getRefreshToken(function(token){
+refreshToken.getRefreshToken(realmid,function(token){
 
 console.log(token)
 
