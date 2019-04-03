@@ -5,6 +5,7 @@ var qbo;
 var refreshToken = require('./refreshToken');
 var port = process.env.PORT || 3000;
 var request = require('request');
+var store = require('./model');
 
 QuickBooks.setOauthVersion('2.0', false);
 
@@ -60,11 +61,13 @@ exports.getQBAccounts = function (req, res) {
 
             getTrialBalance(req, res, function () {
 
-                // store.storeTB(tb, req.query.client, function (status) {
+                   store.storeTB(tb, function(tbxml){
 
-                res.json(tb)
+                   console.log(tbxml)
+                   res.set('Content-Type', 'text/xml');
+                   res.send(tbxml);
+               })
 
-                // })
             })
 
 

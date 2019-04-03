@@ -6,7 +6,6 @@
   "scripts": {
     "test": "mocha",
     "start": "node server.js"
-
   },
   "keywords": [
     "Intuit",
@@ -20,23 +19,25 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "crypto": "^1.0.1",
+    "csrf": "^3.0.6",
+    "ejs": "2.5.5",
+    "engines": {
+      "node": "8.6.0"
+    },
+    "express": "^4.13.3",
+    "express-session": "^1.15.6",
     "jxon": "^2.0.0-beta.5",
     "moment": "^2.19.3",
+    "mongodb": "^3.0.1",
     "node-quickbooks": "^2.0.25",
+    "password-hash": "^1.2.2",
     "querystring": "0.2.0",
-    "request": "2.88.0",
-    "request-debug": "0.2.0",
+    "request": "^2.88.0",
+    "request-debug": "^0.2.0",
     "underscore": "1.6.0",
     "util": "0.10.3",
     "uuid": "^3.1.0",
-    "csrf": "^3.0.6",
-    "ejs": "2.5.5",
-    "express": "^4.13.3",
-    "express-session": "^1.15.6",
-     "engines": {
-      "node": "8.6.0"
-    },
-      "mongodb": "^3.0.1"
+    "xmlbuilder": "^9.0.7"
   },
   "devDependencies": {
     "mocha": "2.2.5",
@@ -49,5 +50,4 @@
     "example": "example",
     "test": "test"
   }
-  
 }

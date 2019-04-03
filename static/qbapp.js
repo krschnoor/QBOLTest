@@ -55,9 +55,9 @@ $scope.getTB = function (realmid) {
     $http.get('/tb', { params: { realmid: realmid } }).success(function (data, status, headers, config) {
 
       console.log(data)
-      $scope.tb = data
-      $scope.setContent('trialbalanceview.html')
-      $scope.content = '/static/' + 'trialbalanceview.html'
+     // $scope.tb = data
+     // $scope.setContent('trialbalanceview.html')
+     // $scope.content = '/static/' + 'trialbalanceview.html'
     }).error(function (data, status, headers, config) { alert(data) })
 
   }
