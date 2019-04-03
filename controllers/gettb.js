@@ -64,6 +64,7 @@ exports.getQBAccounts = function (req, res) {
                    store.storeTB(tb, function(tbxml){
 
                    console.log(tbxml)
+                   
                    res.set('Content-Type', 'text/xml');
                    res.send(tbxml);
                })
