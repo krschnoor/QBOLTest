@@ -25,7 +25,7 @@ exports.storeRefreshToken = function (token, realmid) {
 
 
       });
-    } catch (e) { return -1 }
+    } catch (e) {  }
   })
 
 }
@@ -50,7 +50,7 @@ function storeNew(token, realmid) {
         return true
 
       });
-    } catch (e) { return -1 }
+    } catch (e) { }
 
   });
 
@@ -81,11 +81,11 @@ exports.getRefreshToken = function (realmid, callback) {
             obj.refreshtoken = rt
             callback(obj)
           })
-        } catch (e) { return -1 }
+        } catch (e) {  }
 
       });
     });
-  } catch (e) { return -1 }
+  } catch (e) { }
 
 
 }
