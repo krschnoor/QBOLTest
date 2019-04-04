@@ -10,7 +10,7 @@ var session = require('express-session');
 //app.use('/static',express.static('./static'))
 //app.use('/lib',express.static('../lib'))
 
-app.use(session({resave: false, saveUninitialized: true, secret: 'smith',cookie: { secure: false }}));
+app.use(session({resave: true, saveUninitialized: true, secret: 'smith',cookie: { secure: false }}));
 
 app.get('/', function(req,res){
 res.render('home.html')

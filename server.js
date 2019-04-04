@@ -17,7 +17,7 @@ app.set('views', 'views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser('brad'));
-app.use(session({ resave: false, saveUninitialized: false, secret: 'smith' }));
+app.use(session({ resave: true, saveUninitialized: true, secret: 'smith' }));
 app.engine('.html', require('ejs').renderFile);
 app.set('view engine','html')
 app.use('/static',express.static('./static'))
