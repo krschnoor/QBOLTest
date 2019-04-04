@@ -93,7 +93,7 @@ function getTrialBalance(req, res, callback) {
     var m = res[0]
     var d = res[1]
     var y = res[2]
-    dtStart = new Date(y, m-1, d)
+    dtStart = new Date(y, m, d)
    
     res = dtEnd.split("/")
     var m = res[0]
