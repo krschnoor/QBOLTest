@@ -25,7 +25,7 @@ exports.getQbConn = function (req, res) {
 
 // OAUTH 2 makes use of redirect requests
 function generateAntiForgery(session) {
-  session.secret = csrf.secretSync();
+ // session.secret = csrf.secretSync();
   return csrf.create(session.secret);
 };
 
