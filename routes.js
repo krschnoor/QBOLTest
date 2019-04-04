@@ -25,4 +25,5 @@ app.get('/callback', qb.getTokenSecret );
 app.get('/accounts', qb.getAccounts );
 app.get('/tb', tb.getQBAccounts );
 app.post('/getjson',js.getJson);
+app.get('/getcompany',qb.getCompany);
 }
