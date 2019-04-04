@@ -63,7 +63,7 @@ exports.getQBAccounts = function (req, res) {
 
                 store.storeTB(tb, function (tbxml) {
 
-                    console.log(tbxml)
+                   // console.log(tbxml)
 
                     res.set('Content-Type', 'text/xml');
                     res.send(tbxml);
@@ -93,13 +93,13 @@ function getTrialBalance(req, res, callback) {
     var m = res[0]
     var d = res[1]
     var y = res[2]
-    dtStart = new Date(y, m, d)
+    dtStart = new Date(y, m-1, d)
    
     res = dtEnd.split("/")
     var m = res[0]
     var d = res[1]
     var y = res[2]
-    dtEnd = new Date(y, m, d)
+    dtEnd = new Date(y, m-1, d)
 
    
 
@@ -352,18 +352,18 @@ function downLoadTB(dy, month, yrStart, req, res, ctr, difMonths, callback) {
 
 
 
-                    console.log("Account Name :" + name)
-                    console.log("Account ID :" + id)
-                    console.log("Account Type :" + tbobj.type)
-                    console.log("Debit Balance :" + debit)
-                    console.log("Credit Balance :" + credit)
-                    console.log("Month" + m)
-                    console.log("Year" + y)
-                    console.log("Day" + d)
-                    console.log("ticker" + ticker)
-                    console.log("csort" + tbobj.csort)
-                    console.log("ssort" + tbobj.ssort)
-                    console.log("\n")
+                  //  console.log("Account Name :" + name)
+                  //  console.log("Account ID :" + id)
+                   // console.log("Account Type :" + tbobj.type)
+                   // console.log("Debit Balance :" + debit)
+                  //  console.log("Credit Balance :" + credit)
+                   // console.log("Month" + m)
+                  //  console.log("Year" + y)
+                  //  console.log("Day" + d)
+                  //  console.log("ticker" + ticker)
+                   // console.log("csort" + tbobj.csort)
+                   // console.log("ssort" + tbobj.ssort)
+                    //console.log("\n")
 
 
 
