@@ -34,7 +34,7 @@ exports.getQBAccounts = function (req, res) {
 
             try {
                 accounts.QueryResponse.Account.forEach(function (account) {
-                    console.log(account)
+                   // console.log(account)
                     accountArray.push({ type: account.Classification, id: account.Id, AccountType: account.AccountType })
                 })
             } catch (e) { }
@@ -83,14 +83,33 @@ exports.getQBAccounts = function (req, res) {
 function getTrialBalance(req, res, callback) {
 
     tb = [];
-    // var dtStart = new Date(req.query.dtStart + 1)
-    // var dtEnd = new Date(req.query.dtEnd)
+    var res
+    
+    
+    var dtStart = req.query.dtStart 
+    var dtEnd = req.query.dtEnd
 
-    dtStart = new Date(2018, 1, 1)
-    dtEnd = new Date(2018, 12, 31)
+    res = dtStart.split("/")
+    var m = res[0]
+    var d = res[1]
+    var y = res[2]
+    dtStart = new Date(y, m, d)
+   
+    res = dtEnd.split("/")
+    var m = res[0]
+    var d = res[1]
+    var y = res[2]
+    dtEnd = new Date(y, m, d)
+
+   
+
+    console.log("date Start " + dtStart)
+    console.log("date End " + dtEnd)
+    //dtStart = new Date(2018, 1, 1)
+    //dtEnd = new Date(2018, 12, 31)
 
     var yrStart = dtStart.getFullYear()
-    var mnthStart = dtStart.getMonth() + 1
+    var mnthStart = dtStart.getMonth() 
     var month, dy, yr
 
     var timeDiff = (dtEnd.getTime() - dtStart.getTime());
@@ -394,7 +413,7 @@ function getRefreshToken(req, res, callback) {
     //need to add client realmid and pass to function to get correct refresh token. realm id should be passed in as a query parameter
 
     try {
-        refreshToken.getRefreshToken(realmid, function (token) {
+        refreshToken.getRefreshToken(res,realmid, function (token) {
 
             console.log(token)
             if(token==-1) {

@@ -59,7 +59,7 @@ function storeNew(token, realmid) {
 
 
 
-exports.getRefreshToken = function (realmid, callback) {
+exports.getRefreshToken = function (res,realmid, callback) {
 
   try {
     MongoClient.connect(url, function (err, db) {
@@ -81,7 +81,9 @@ exports.getRefreshToken = function (realmid, callback) {
             obj.refreshtoken = rt
             callback(obj)
           })
-        } catch (e) {  }
+        } catch (e) { 
+          res.send("<InputTable></InputTable>")
+         }
 
       });
     });
