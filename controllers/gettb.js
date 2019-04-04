@@ -34,7 +34,7 @@ exports.getQBAccounts = function (req, res) {
 
             try {
                 accounts.QueryResponse.Account.forEach(function (account) {
-                   // console.log(account)
+                    // console.log(account)
                     accountArray.push({ type: account.Classification, id: account.Id, AccountType: account.AccountType })
                 })
             } catch (e) { }
@@ -63,7 +63,7 @@ exports.getQBAccounts = function (req, res) {
 
                 store.storeTB(tb, function (tbxml) {
 
-                   // console.log(tbxml)
+                    // console.log(tbxml)
 
                     res.set('Content-Type', 'text/xml');
                     res.send(tbxml);
@@ -83,33 +83,10 @@ exports.getQBAccounts = function (req, res) {
 function getTrialBalance(req, res, callback) {
 
     tb = [];
-    var res
-    
-    
-    var dtStart = req.query.dtStart 
-    var dtEnd = req.query.dtEnd
-
-    res = dtStart.split("/")
-    var m = res[0]
-    var d = res[1]
-    var y = res[2]
-    dtStart = new Date(y, m, d)
-   
-    res = dtEnd.split("/")
-    var m = res[0]
-    var d = res[1]
-    var y = res[2]
-    dtEnd = new Date(y, m, d)
-
-   
-
-    console.log("date Start " + dtStart)
-    console.log("date End " + dtEnd)
-    //dtStart = new Date(2018, 1, 1)
-    //dtEnd = new Date(2018, 12, 31)
-
+    var dtStart = new Date(req.query.dtStart + 1)
+    var dtEnd = new Date(req.query.dtEnd)
     var yrStart = dtStart.getFullYear()
-    var mnthStart = dtStart.getMonth() 
+    var mnthStart = dtStart.getMonth() + 1
     var month, dy, yr
 
     var timeDiff = (dtEnd.getTime() - dtStart.getTime());
@@ -352,17 +329,17 @@ function downLoadTB(dy, month, yrStart, req, res, ctr, difMonths, callback) {
 
 
 
-                  //  console.log("Account Name :" + name)
-                  //  console.log("Account ID :" + id)
-                   // console.log("Account Type :" + tbobj.type)
-                   // console.log("Debit Balance :" + debit)
-                  //  console.log("Credit Balance :" + credit)
-                   // console.log("Month" + m)
-                  //  console.log("Year" + y)
-                  //  console.log("Day" + d)
-                  //  console.log("ticker" + ticker)
-                   // console.log("csort" + tbobj.csort)
-                   // console.log("ssort" + tbobj.ssort)
+                    //  console.log("Account Name :" + name)
+                    //  console.log("Account ID :" + id)
+                    // console.log("Account Type :" + tbobj.type)
+                    // console.log("Debit Balance :" + debit)
+                    //  console.log("Credit Balance :" + credit)
+                    // console.log("Month" + m)
+                    //  console.log("Year" + y)
+                    //  console.log("Day" + d)
+                    //  console.log("ticker" + ticker)
+                    // console.log("csort" + tbobj.csort)
+                    // console.log("ssort" + tbobj.ssort)
                     //console.log("\n")
 
 
@@ -413,11 +390,11 @@ function getRefreshToken(req, res, callback) {
     //need to add client realmid and pass to function to get correct refresh token. realm id should be passed in as a query parameter
 
     try {
-        refreshToken.getRefreshToken(res,realmid, function (token) {
+        refreshToken.getRefreshToken(res, realmid, function (token) {
 
             console.log(token)
-            if(token==-1) {
-            res.send("<InputTable></InputTable>") 
+            if (token == -1) {
+                res.send("<InputTable></InputTable>")
             }
 
             var postBody = {

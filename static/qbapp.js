@@ -53,7 +53,7 @@ $scope.getTB = function (realmid) {
 
     alert(realmid)
 
-    $http.get('/tb', { params: { realmid: realmid, dtStart:"1/1/2019",dtEnd:"3/31/2019" } }).success(function (data, status, headers, config) {
+    $http.get('/tb', { params: { realmid: realmid, dtStart:"2019-1-1",dtEnd:"2019-3-31" } }).success(function (data, status, headers, config) {
 
       console.log(data)
      // $scope.tb = data
