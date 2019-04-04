@@ -65,7 +65,7 @@ exports.getTokenSecret = function (req, res) {
     // store initial refresh token and realmid
     if (refreshToken.storeRefreshToken(accessToken.refresh_token, req.query.realmId)) {
 
-        qbo = new QuickBooks(consumerKey,
+      qbo = new QuickBooks(consumerKey,
         consumerSecret,
         accessToken.access_token, /* oAuth access token */
         false, /* no token secret for oAuth 2.0 */
@@ -91,7 +91,21 @@ exports.getTokenSecret = function (req, res) {
   res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
 };
 
+exports.getCompany = function (req, res) {
 
+  var qbo = req.session.qbo
+
+  qbo.getCompanyInfo(function (_, res) {
+
+    console.log(res)
+
+    res.status(200).json(res)
+
+  })
+
+
+
+}
 
 exports.getAccounts = function (req, res) {
 
@@ -163,19 +177,7 @@ exports.getAccounts = function (req, res) {
   })
 
 
-  exports.getCompany = function (req, res) {
 
-   var qbo =  req.session.qbo
-
-   qbo.getCompanyInfo(function(_,res){
-
-   console.log(res)
-
-   })
-
-
-
-  }
 
 
 }
