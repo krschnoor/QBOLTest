@@ -33,8 +33,10 @@ exports.getCompany = function (req, res) {
 
         qbo.getCompanyInfo(session.id, function (_, response) {
 
+            //need to add realm id or session.id to response
             console.log(response)
-
+         
+            response.realmID = session.id
             res.status(200).json(response)
 
         })

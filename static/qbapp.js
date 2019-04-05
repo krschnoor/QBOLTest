@@ -6,6 +6,7 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
   $scope.realmid = ''
   $scope.content = ''
   $scope.tb = null
+  $scope.company = null
 
   $scope.getQB = function () {
 
@@ -39,8 +40,8 @@ $scope.testKeys = function () {
 
      alert(data.CompanyName)
      console.log(data)
-     // $scope.QBAccounts = data
-     // $scope.content = '/static/' + 'hello.html'
+     $scope.company = data
+     $scope.content = '/static/' + 'company.html'
     }).error(function (data, status, headers, config) { alert(data) })
 
   }
