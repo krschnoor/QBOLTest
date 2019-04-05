@@ -72,7 +72,7 @@ exports.getTokenSecret = function (req, res) {
 
   });
 
-  res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
+ // res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
 };
 
 exports.getCompany = function (req, res) {
