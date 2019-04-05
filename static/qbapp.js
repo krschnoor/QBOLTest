@@ -32,6 +32,21 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
   }
 
 
+$scope.testKeys = function () {
+
+   
+    $http.get('/getcompany').success(function (data, status, headers, config) {
+
+     alert(data.CompanyName)
+     // $scope.QBAccounts = data
+     // $scope.content = '/static/' + 'hello.html'
+    }).error(function (data, status, headers, config) { alert(data) })
+
+  }
+
+
+
+
   $scope.setContent = function (page) {
 
     $scope.content = '/static/' + page
