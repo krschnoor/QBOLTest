@@ -35,19 +35,19 @@ exports.getCompany = function (req, res) {
              console.log(account.Name);
              
               });
-            res.status(200).json(accounts.QueryResponse.Account)
+           // res.status(200).json(accounts.QueryResponse.Account)
 
         });
 
 
 
-        //  qbo.getCompanyInfo(session.id,function (res) {
+          qbo.getCompanyInfo(session.id,function (_, res) {
 
-        //  console.log(res)
+          console.log(res)
 
-        //  res.status(200).json({})
+          res.status(200).json({})
 
-        //  })
+          })
 
     })
 
