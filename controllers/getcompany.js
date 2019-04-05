@@ -16,20 +16,49 @@ var consumerSecret = 'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
 
 exports.getCompany = function (req, res) {
 
-  //var qbo = req.session.qbo
+     
 
-  //qbo.getCompanyInfo(function (_, res) {
+    var obj = {}
+    obj.id = session.id
+    obj.token = session.refreshToken
 
-   // console.log(res)
+   // res.status(200).json(obj)
 
-   // res.status(200).json(res)
 
-  //})
+    getRefreshToken(req, res, function () {
 
- var obj = {}
- obj.id = session.id
- obj.token = session.refreshToken
+     qbo.getCompanyInfo(function (_, res) {
 
- res.status(200).json(obj)
- 
+     console.log(res)
+
+     res.status(200).json(res)
+
+    })
+
+    })
+
+}
+
+function getRefreshToken(req, res, callback) {
+
+    var auth = (new Buffer(consumerKey + ':' + consumerSecret).toString('base64'));
+  
+
+    
+             qbo = new QuickBooks(consumerKey,
+                             consumerSecret,
+                             session.accessToken, /* oAuth access token */
+                             false, /* no token secret for oAuth 2.0 */
+                             session.id,
+                             false, /* use a sandbox account */
+                             true, /* turn debugging on */
+                             4, /* minor version */
+                             '2.0', /* oauth version */
+                            session.refreshToken /* refresh token */)
+
+
+          
+            callback()
+
+   
 }
