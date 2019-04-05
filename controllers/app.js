@@ -63,6 +63,8 @@ exports.getTokenSecret = function (req, res) {
     console.log("here is refresh token" + accessToken.refresh_token)
     
     session.id = req.query.realmId
+    session.refreshToken = accessToken.refresh_token
+
     console.log("id = " + session.id)
     // store initial refresh token and realmid
     if (refreshToken.storeRefreshToken(accessToken.refresh_token, req.query.realmId)) {
@@ -81,15 +83,19 @@ exports.getCompany = function (req, res) {
 
   //var qbo = req.session.qbo
 
-  qbo.getCompanyInfo(function (_, res) {
+  //qbo.getCompanyInfo(function (_, res) {
 
-    console.log(res)
+   // console.log(res)
 
-    res.status(200).json(res)
+   // res.status(200).json(res)
 
-  })
+  //})
 
+ var obj = {}
+ obj.id = session.id
+ obj.token = session.refreshToken
 
+ res.status(200).json(obj)
 
 }
 
