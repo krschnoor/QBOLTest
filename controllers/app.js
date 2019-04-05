@@ -96,7 +96,7 @@ exports.getCompany = function (req, res) {
  obj.token = session.refreshToken
 
  res.status(200).json(obj)
-
+ 
 }
 
 exports.getAccounts = function (req, res) {

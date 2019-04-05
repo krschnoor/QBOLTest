@@ -24,7 +24,7 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
     alert("getaccounts")
     $http.get('/getcompany', { params: { realmid: realmid } }).success(function (data, status, headers, config) {
 
-     alert(data)
+     alert(data.id)
      // $scope.QBAccounts = data
      // $scope.content = '/static/' + 'hello.html'
     }).error(function (data, status, headers, config) { alert(data) })
