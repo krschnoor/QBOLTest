@@ -30,13 +30,13 @@ exports.getCompany = function (req, res) {
 
    console.log(qbo)
     
-    // qbo.getCompanyInfo(function (_, res) {
+     qbo.getCompanyInfo(session.id,function (res) {
 
-    // console.log(res)
+     console.log(res)
 
-    // res.status(200).json(res)
+     res.status(200).json(res)
 
-   // })
+    })
 
     })
 
