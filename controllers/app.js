@@ -80,31 +80,7 @@ exports.getTokenSecret = function (req, res) {
  
 };
 
-exports.getCompany = function (req, res) {
 
-
-
-
-
-
-
-  //var qbo = req.session.qbo
-
-  //qbo.getCompanyInfo(function (_, res) {
-
-   // console.log(res)
-
-   // res.status(200).json(res)
-
-  //})
-
- var obj = {}
- obj.id = session.id
- obj.token = session.refreshToken
-
- res.status(200).json(obj)
- 
-}
 
 exports.getAccounts = function (req, res) {
 

@@ -30,24 +30,14 @@ exports.getCompany = function (req, res) {
 
         console.log(qbo)
 
-        qbo.findAccounts(function (_, accounts) {
-             accounts.QueryResponse.Account.forEach(function (account) {
-             console.log(account.Name);
-             
-              });
-           // res.status(200).json(accounts.QueryResponse.Account)
 
-        });
+        qbo.getCompanyInfo(session.id, function (_, res) {
 
+            console.log(res)
 
+            res.status(200).json({})
 
-          qbo.getCompanyInfo(session.id,function (_, res) {
-
-          console.log(res)
-
-          res.status(200).json({})
-
-          })
+        })
 
     })
 
