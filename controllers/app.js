@@ -25,7 +25,7 @@ exports.getQbConn = function (req, res) {
 
 // OAUTH 2 makes use of redirect requests
 function generateAntiForgery(session) {
- session.secret = csrf.secretSync();
+  session.secret = csrf.secretSync();
   return csrf.create(session.secret);
 };
 
@@ -65,23 +65,7 @@ exports.getTokenSecret = function (req, res) {
     // store initial refresh token and realmid
     if (refreshToken.storeRefreshToken(accessToken.refresh_token, req.query.realmId)) {
 
-      qbo = new QuickBooks(consumerKey,
-        consumerSecret,
-        accessToken.access_token, /* oAuth access token */
-        false, /* no token secret for oAuth 2.0 */
-        req.query.realmId,
-        false, /* use a sandbox account */
-        true, /* turn debugging on */
-        4, /* minor version */
-        '2.0', /* oauth version */
-        accessToken.refresh_token /* refresh token */);
-
-      req.session.qbo = qbo
-
-      req.session.save();
-
-
-      res.json(200, {})
+      res.render('realmid.ejs', { port: port, appCenter: QuickBooks.APP_CENTER_BASE });
     }
 
 
