@@ -16,27 +16,38 @@ var consumerSecret = 'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
 
 exports.getCompany = function (req, res) {
 
-     
+
 
     var obj = {}
     obj.id = session.id
     obj.token = session.refreshToken
 
-   // res.status(200).json(obj)
+    // res.status(200).json(obj)
 
 
     getRefreshToken(req, res, function () {
 
 
-   console.log(qbo)
-    
-     qbo.getCompanyInfo(session.id,function (res) {
+        console.log(qbo)
 
-     console.log(res)
+        qbo.findAccounts(function (_, accounts) {
+             accounts.QueryResponse.Account.forEach(function (account) {
+             console.log(account.Name);
+             
+              });
+            res.status(200).json(accounts.QueryResponse.Account)
 
-     res.status(200).json({})
+        });
 
-    })
+
+
+        //  qbo.getCompanyInfo(session.id,function (res) {
+
+        //  console.log(res)
+
+        //  res.status(200).json({})
+
+        //  })
 
     })
 
@@ -45,23 +56,23 @@ exports.getCompany = function (req, res) {
 function getRefreshToken(req, res, callback) {
 
     var auth = (new Buffer(consumerKey + ':' + consumerSecret).toString('base64'));
-  
-
-    
-             qbo = new QuickBooks(consumerKey,
-                             consumerSecret,
-                             session.accessToken, /* oAuth access token */
-                             false, /* no token secret for oAuth 2.0 */
-                             session.id,
-                             false, /* use a sandbox account */
-                             true, /* turn debugging on */
-                             4, /* minor version */
-                             '2.0', /* oauth version */
-                            session.refreshToken /* refresh token */)
 
 
-          
-            callback()
 
-   
+    qbo = new QuickBooks(consumerKey,
+        consumerSecret,
+        session.accessToken, /* oAuth access token */
+        false, /* no token secret for oAuth 2.0 */
+        session.id,
+        false, /* use a sandbox account */
+        true, /* turn debugging on */
+        4, /* minor version */
+        '2.0', /* oauth version */
+        session.refreshToken /* refresh token */)
+
+
+
+    callback()
+
+
 }
