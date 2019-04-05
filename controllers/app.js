@@ -81,6 +81,12 @@ exports.getTokenSecret = function (req, res) {
 
 exports.getCompany = function (req, res) {
 
+
+
+
+
+
+
   //var qbo = req.session.qbo
 
   //qbo.getCompanyInfo(function (_, res) {
