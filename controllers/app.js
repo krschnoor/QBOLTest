@@ -73,7 +73,7 @@ exports.getTokenSecret = function (req, res) {
   });
 
   res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
-  res.render('realmid.ejs', { port: port, appCenter: QuickBooks.APP_CENTER_BASE });
+ 
 };
 
 exports.getCompany = function (req, res) {
