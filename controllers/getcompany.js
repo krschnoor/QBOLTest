@@ -34,7 +34,7 @@ exports.getCompany = function (req, res) {
 
      console.log(res)
 
-     res.status(200).json(res)
+     res.status(200).json({})
 
     })
 
