@@ -65,7 +65,8 @@ exports.getTokenSecret = function (req, res) {
     // store initial refresh token and realmid
     if (refreshToken.storeRefreshToken(accessToken.refresh_token, req.query.realmId)) {
 
-    
+    session.id = req.query.realmId
+    console.log("id = " + session.id)
     }
 
 
