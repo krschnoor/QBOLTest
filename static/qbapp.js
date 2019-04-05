@@ -25,23 +25,23 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
     alert("getaccounts")
     $http.get('/getcompany', { params: { realmid: realmid } }).success(function (data, status, headers, config) {
 
-     alert(data.id)
-     // $scope.QBAccounts = data
-     // $scope.content = '/static/' + 'hello.html'
+      alert(data.id)
+      // $scope.QBAccounts = data
+      // $scope.content = '/static/' + 'hello.html'
     }).error(function (data, status, headers, config) { alert(data) })
 
   }
 
 
-$scope.testKeys = function () {
+  $scope.testKeys = function () {
 
-   
+
     $http.get('/getcompany').success(function (data, status, headers, config) {
 
-     alert(data.CompanyName)
-     console.log(data)
-     $scope.company = data
-     $scope.content = '/static/' + 'company.html'
+
+      console.log(data)
+      $scope.company = data
+      $scope.content = '/static/' + 'company.html'
     }).error(function (data, status, headers, config) { alert(data) })
 
   }
@@ -66,21 +66,21 @@ $scope.testKeys = function () {
 
 
 
-$scope.getTB = function (realmid) {
+  $scope.getTB = function (realmid) {
 
     alert(realmid)
 
-    $http.get('/tb', { params: { realmid: realmid, dtStart:"2019-1-1",dtEnd:"2019-3-31" } }).success(function (data, status, headers, config) {
+    $http.get('/tb', { params: { realmid: realmid, dtStart: "2019-1-1", dtEnd: "2019-3-31" } }).success(function (data, status, headers, config) {
 
       console.log(data)
-     // $scope.tb = data
-     // $scope.setContent('trialbalanceview.html')
-     // $scope.content = '/static/' + 'trialbalanceview.html'
+      // $scope.tb = data
+      // $scope.setContent('trialbalanceview.html')
+      // $scope.content = '/static/' + 'trialbalanceview.html'
     }).error(function (data, status, headers, config) { alert(data) })
 
   }
 
-$scope.getTrialBalanceViewTotals = function (type) {
+  $scope.getTrialBalanceViewTotals = function (type) {
 
 
     var totals = {

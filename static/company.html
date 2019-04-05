@@ -4,54 +4,71 @@
             <div class="panel-heading">Test Keys</div>
             <div class="panel-body">
                 <table class="table table-hover table-md">
-                    <tr class="bg-primary">Company Information</tr>
+                    <tr class="bg-primary">
+                        <td>Company Information</td>
+
+                    </tr>
                     <tr>
                         <td width="65">
-                            <label >Company Name:</label>
+                            <label>Company Name:</label>
                         </td>
                         <td width="5" ng-model="company.CompanyName">{{company.CompanyName}}</td>>
 
                     </tr>
                     <tr>
                         <td width="65">
-                            <label >RealmID:</label>
+                            <label>RealmID:</label>
                         </td>
                         <td width="5" ng-model="company.realmID">{{company.realmID}}</td>>
 
                     </tr>
                     <tr>
                         <td width="65">
-                            <label >Street:</label>
+                            <label>Street:</label>
                         </td>
-                        <td width="5" ng-model="company.Line1">{{company.Line1}}</td>>
+                        <td width="5" ng-model="company.CompanyAddr.Line1">{{company.CompanyAddr.Line1}}</td>>
 
                     </tr>
-                     <tr>
+                    <tr>
                         <td width="65">
-                            <label >City:</label>
+                            <label>City:</label>
                         </td>
-                        <td width="5" ng-model="company.City">{{company.City}}</td>>
+                        <td width="5" ng-model="company.CompanyAddr.City">{{company.CompanyAddr.City}}</td>>
 
                     </tr>
-                     <tr>
+                    <tr>
                         <td width="65">
-                            <label >Zip:</label>
+                            <label>State:</label>
                         </td>
-                        <td width="5" ng-model="company.PostalCode">{{company.PostalCode}}</td>>
+                        <td width="5" ng-model="company.CompanyAddr.CountrySubDivisionCode">{{company.CompanyAddr.CountrySubDivisionCode}}</td>>
 
                     </tr>
-                     <tr>
+                    <tr>
                         <td width="65">
-                            <label >Phone:</label>
+                            <label>Zip:</label>
+                        </td>
+                        <td width="5" ng-model="company.CompanyAddr.PostalCode">{{company.CompanyAddr.PostalCode}}</td>>
+
+                    </tr>
+                    <tr>
+                        <td width="65">
+                            <label>Phone:</label>
                         </td>
                         <td width="5" ng-model="company.PrimaryPhone.FreeFormNumber">{{company.PrimaryPhone.FreeFormNumber}}</td>>
 
                     </tr>
                     <tr>
                         <td width="65">
-                            <label >Email:</label>
+                            <label>Email:</label>
                         </td>
                         <td width="5" ng-model="company.Email.Address">{{company.Email.Address}}</td>>
+
+                    </tr>
+                    <tr>
+                        <td width="65">
+                            <label>Web:</label>
+                        </td>
+                        <td width="5" ng-model="company.WebAddr.URI">{{company.WebAddr.URI}}</td>>
 
                     </tr>
                 </table>
