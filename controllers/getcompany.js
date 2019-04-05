@@ -27,13 +27,16 @@ exports.getCompany = function (req, res) {
 
     getRefreshToken(req, res, function () {
 
-     qbo.getCompanyInfo(function (_, res) {
 
-     console.log(res)
+   console.log(qbo)
+    
+    // qbo.getCompanyInfo(function (_, res) {
 
-     res.status(200).json(res)
+    // console.log(res)
 
-    })
+    // res.status(200).json(res)
+
+   // })
 
     })
 
