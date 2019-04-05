@@ -65,14 +65,15 @@ exports.getTokenSecret = function (req, res) {
     // store initial refresh token and realmid
     if (refreshToken.storeRefreshToken(accessToken.refresh_token, req.query.realmId)) {
 
-      res.render('realmid.ejs', { port: port, appCenter: QuickBooks.APP_CENTER_BASE });
+    
     }
 
 
 
   });
 
- // res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
+  res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>');
+  res.render('realmid.ejs', { port: port, appCenter: QuickBooks.APP_CENTER_BASE });
 };
 
 exports.getCompany = function (req, res) {
