@@ -38,6 +38,7 @@ $scope.testKeys = function () {
     $http.get('/getcompany').success(function (data, status, headers, config) {
 
      alert(data.CompanyName)
+     console.log(data)
      // $scope.QBAccounts = data
      // $scope.content = '/static/' + 'hello.html'
     }).error(function (data, status, headers, config) { alert(data) })
