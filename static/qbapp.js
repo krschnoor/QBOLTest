@@ -102,6 +102,20 @@ app.controller('QBOLcontroller', ['$scope', '$http', '$location', '$timeout', '$
     return type == "credit" ? totals.credits : totals.debits
   }
 
+
+  $scope.copy = function () {
+    
+    var copyText = document.getElementById("realmID");
+
+    /* Select the text field */
+    copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    return null
+  }
+
 }])
 
 

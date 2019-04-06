@@ -18,8 +18,10 @@
                         <td width="65">
                             <label>RealmID:</label>
                         </td>
-                        <td width="5" ng-model="company.realmID">{{company.realmID}}</td>>
-
+                        <td width="5"  ng-model="company.realmID"><span id="realmID">{{company.realmID}}</span>
+                        <span style="padding:6"><button  ng-click="copy();" class="fa fa-clipboard">Copy</button>
+                        </span>
+                        </td>
                     </tr>
                     <tr>
                         <td width="65">
