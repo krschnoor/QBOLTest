@@ -4,6 +4,7 @@ module.exports = function(app){
 var qb = require('./controllers/app.js')
 var js = require('./controllers/getjson.js')
 var tb = require('./controllers/gettb.js')
+var db = require('./controllers/getdb.js')
 var company = require('./controllers/getcompany.js')
 var session = require('express-session');
  
@@ -25,6 +26,7 @@ app.get('/requestToken',qb.getToken);
 app.get('/callback', qb.getTokenSecret );
 app.get('/accounts', qb.getAccounts );
 app.get('/tb', tb.getQBAccounts );
+app.get('/db', db.getQBAccounts );
 app.post('/getjson',js.getJson);
 app.get('/getcompany',company.getCompany);
 }
