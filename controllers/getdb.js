@@ -220,7 +220,6 @@ function downLoadTB(dy, month, yrStart, req, res, ctr, difMonths, callback) {
 
 
 
-
                 try {
                     var name, id, debit, credit, type, category
                     name = row.ColData[0].value
