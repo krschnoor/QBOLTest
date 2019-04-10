@@ -1,5 +1,6 @@
 var QuickBooks = require('../index');
 var Tokens = require('csrf');
+var config = require('../config')
 var csrf = new Tokens();
 var qbo;
 var refreshToken = require('./refreshToken');
@@ -10,9 +11,8 @@ var store = require('./model2');
 QuickBooks.setOauthVersion('2.0', false);
 
 
-
-var consumerKey = 'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
-var consumerSecret = 'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
+var consumerKey = config.consumerKey //'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
+var consumerSecret = config.consumerSecret //'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
 
  var accountArray = [], tb = [], ticker = 0;
 

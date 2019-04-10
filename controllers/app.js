@@ -1,4 +1,5 @@
 var QuickBooks = require('../index');
+var config = require('../config')
 var Tokens = require('csrf');
 var csrf = new Tokens();
 var qbo;
@@ -12,12 +13,10 @@ session = require('express-session'),
 
 // INSERT YOUR CONSUMER_KEY AND CONSUMER_SECRET HERE
 
-var consumerKey = 'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
-var consumerSecret = 'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
+var consumerKey = config.consumerKey //'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
+var consumerSecret = config.consumerSecret //'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
 
-//app.get('/', function (req, res) {
-//  res.redirect('/start');
-//});
+
 
 exports.getQbConn = function (req, res) {
   res.render('intuit.ejs', { port: port, appCenter: QuickBooks.APP_CENTER_BASE });
