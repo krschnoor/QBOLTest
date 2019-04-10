@@ -1,10 +1,9 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = config.mongoURL //"mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol";
 var crypto = require('crypto')
 var config = require('../config')
 var algorithm = config.algorithm //'aes-256-ctr'
 var password = config.password //'d6F3Efeq';
-
+var url = config.mongoURL //"mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol";
 
 exports.storeRefreshToken = function (token, realmid) {
 
