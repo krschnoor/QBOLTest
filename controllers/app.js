@@ -13,8 +13,8 @@ session = require('express-session'),
 
 // INSERT YOUR CONSUMER_KEY AND CONSUMER_SECRET HERE
 
-var consumerKey = config.consumerKey //'Q0nQF35Vp5bPyfeVatEM38ATMrwgHM7ciyNApuZT8iYgRbyLHs';
-var consumerSecret = config.consumerSecret //'KQz8iQKCV6eWNSn4NZXZEFiTH1P2ibW5xJ6wSh2E';
+var consumerKey = config.consumerKey 
+var consumerSecret = config.consumerSecret 
 
 
 
