@@ -22,7 +22,8 @@
     "csrf": "^3.0.6",
     "ejs": "2.5.5",
     "engines": {
-      "node": "8.6.0"
+      "node": "8.6.0",
+      "npm":"5.6.0"
     },
     "express": "^4.13.3",
     "express-session": "^1.15.6",
