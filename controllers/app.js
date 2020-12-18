@@ -31,7 +31,7 @@ function generateAntiForgery(session) {
 exports.getToken = function (req, res) {
   var redirecturl = QuickBooks.AUTHORIZATION_URL +
     '?client_id=' + consumerKey +
-    '&redirect_uri=' + 'https://qboltest.herokuapp.com/callback/' +  //Make sure this path matches entry in application dashboard
+    '&redirect_uri=' + encodeURIComponent('https://qboltest.herokuapp.com/callback/') +  //Make sure this path matches entry in application dashboard
     '&scope=com.intuit.quickbooks.accounting' +
     '&response_type=code' +
     '&state=' + generateAntiForgery(req.session);
