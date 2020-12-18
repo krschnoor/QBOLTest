@@ -14,5 +14,5 @@ module.exports = {
   minorversion: '', // Use to set minorversion for request,
   algorithm: 'aes-256-ctr',
   password: 'd6F3Efeq',
-  mongoURL: "mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol"
+  mongoURL:  "mongodb+srv://kurts:556655K@qbol.fhgmk.mongodb.net/qbol?retryWrites=true&w=majority"   //"mongodb://kurts:556655K@ds153314.mlab.com:53314/qbol"
 }
