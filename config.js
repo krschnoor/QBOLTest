@@ -1,6 +1,6 @@
 module.exports = {
-  consumerKey:     'Q0vfctRB1AecC1DU84OWP775lDtA5q3i1Tz37UQA3GJgqTgB2I',
-  consumerSecret:  'LWOdSdJKTzeDLIWlgAk4INfqnt33bI4jte7nruGm',
+  consumerKey:     'AB0ORHlsXpx8zZb7agA7V3y18zdTH0hSVBrQGLH0BZWc1bJvlV',
+  consumerSecret:  'B8VetrafTwJkLVsEwTwi3PXmPdxppHhO8CL5PmUk',
   token:           '',
   tokenSecret:     '',
   realmId:         '',
